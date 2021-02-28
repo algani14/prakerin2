@@ -61,11 +61,7 @@
                             <span class="nav-link-inner--text">Login</span>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="{{ url('register') }}" class="nav-link">
-                            <span class="nav-link-inner--text">Register</span>
-                        </a>
-                    </li>
+
                 </ul>
 
             </div>
@@ -153,7 +149,8 @@
                                 <a href="#" class="text-light"><small>Forgot password?</small></a>
                             </div>
                             <div class="col-6 text-right">
-                                <a href="{{ url('register') }}" class="text-light"><small>Create new account</small></a>
+                                <a href="{{ url('register') }}" class="text-light"><small>Create new
+                                        account</small></a>
                             </div>
                         </div>
                     </div>
