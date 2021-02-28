@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Models;
-use\Models\Desa;
-use\Models\Kasus;
+use App\Models\Desa;
+use App\Models\Kasus;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
