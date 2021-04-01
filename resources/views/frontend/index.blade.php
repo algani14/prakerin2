@@ -127,7 +127,7 @@
                             <h5>
                                 <p>Jumlah Total Positif di Dunia</p>
                             </h5>
-                            {{-- <span data-toggle="counter-up"><?php echo $posglobal['value']; ?></span> --}}
+                            <span data-toggle="counter-up"><?php echo $posglobal['value']; ?></span>
                             <p>Orang</p>
                         </div>
                     </div>
@@ -212,7 +212,7 @@
         <!-- ======== End Table Section ======== -->
 
         <!-- ======== Table Section Global ======= -->
-        {{-- <section id="global" class="global">
+        <section id="global" class="global">
             <div class="container">
                 <div class="row row-cards">
                     <div class="col-sm-12 col-md-12 col-lg-12 col-xl-14">
@@ -252,13 +252,17 @@
                                                 @foreach ($dunia as $data)
                                                     <tr>
                                                         <td> <?php echo $no++; ?></td>
-                                                        <td> <?php echo $data['attributes']['Country_Region']; ?>
+                                                        <td> <?php echo
+                                                            $data['attributes']['Country_Region']; ?>
                                                         </td>
-                                                        <td> <?php echo number_format($data['attributes']['Confirmed']); ?>
+                                                        <td> <?php echo
+                                                            number_format($data['attributes']['Confirmed']); ?>
                                                         </td>
-                                                        <td><?php echo number_format($data['attributes']['Recovered']); ?>
+                                                        <td><?php echo
+                                                            number_format($data['attributes']['Recovered']); ?>
                                                         </td>
-                                                        <td><?php echo number_format($data['attributes']['Deaths']); ?>
+                                                        <td><?php echo
+                                                            number_format($data['attributes']['Deaths']); ?>
                                                         </td>
                                                     </tr>
                                                 @endforeach
@@ -271,7 +275,7 @@
                     </div>
                 </div>
             </div>
-        </section> --}}
+        </section>
         <!-- ======== End Table Section Global ======= -->
 
 

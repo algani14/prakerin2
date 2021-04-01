@@ -8,6 +8,7 @@ use App\Http\Controllers\DesaController;
 use App\Http\Controllers\RwController;
 use App\Http\Controllers\KasusController;
 use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,6 +41,7 @@ Route::resource('kecamatan',KecamatanController::class);
 Route::resource('desa',DesaController::class);
 Route::resource('rw',RwController::class);
 Route::resource('kasus',KasusController::class);
+Route::resource('users', UserController::class)->middleware('admin');
 
 });
 Route::resource('/',FrontendController::class);

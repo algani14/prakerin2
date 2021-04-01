@@ -8,8 +8,8 @@
                     @include('flash-message')
                     <div class="card-header py-3">
                         <h10 class="m-0 font-weight-bold text-primary">
-                            Data Kota
-                            <a href=" {{ route('kota.create') }} " class="btn btn-primary" style="float: right;">Tambah
+                            Data User
+                            <a href=" {{ route('users.create') }} " class="btn btn-primary" style="float: right;">Tambah
                                 Data</a>
                         </h10>
                     </div>
@@ -19,9 +19,9 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Nama kota</th>
-                                        <th>Kode kota</th>
-                                        <th>provinsi</th>
+                                        <th>Nama </th>
+                                        <th>Email</th>
+                                        <th>Role</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -29,24 +29,24 @@
                                     @php
                                         $no = 1;
                                     @endphp
-                                    @foreach ($kota as $item)
+                                    @foreach ($users as $item)
                                         <tr>
                                             <td>{{ $no++ }}</td>
-                                            <td> {{ $item->nama_kota }} </td>
-                                            <td> {{ $item->kode_kota }} </td>
-                                            <td> {{ $item->provinsi->nama_provinsi }} </td>
+                                            <td> {{ $item->name }} </td>
+                                            <td> {{ $item->email }} </td>
+                                            <td> {{ $item->role }} </td>
                                             <td>
                                                 <center>
-                                                    <form action="{{ route('kota.destroy', $item->id) }}" method="post">
+                                                    <form action="{{ route('rw.destroy', $item->id) }}" method="post">
                                                         @csrf
                                                         @method('Delete')
                                                         <a class="btn btn-outline-info btn-sm"
-                                                            href=" {{ route('kota.edit', $item->id) }} "><i
+                                                            href=" {{ route('rw.edit', $item->id) }} "><i
                                                                 class="fa fa-edit"></a></i>
 
                                                         </a>
                                                         <a class="btn btn-outline-success btn-sm"
-                                                            href=" {{ route('kota.show', $item->id) }} "><i
+                                                            href=" {{ route('rw.show', $item->id) }} "><i
                                                                 class="fa fa-eye"></a></i>
 
                                                         </a>

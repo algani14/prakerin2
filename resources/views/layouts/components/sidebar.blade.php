@@ -12,12 +12,7 @@
             <div class="collapse navbar-collapse" id="sidenav-collapse-main">
                 <!-- Nav items -->
                 <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="{{ url('admin') }}">
 
-                            <span class="nav-link-text">Dashboard</span>
-                        </a>
-                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('admin/provinsi') }}">
 
@@ -48,13 +43,25 @@
                             <span class="nav-link-text">Rw</span>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url('admin/kasus') }}">
+                    @if (Auth::user()->role == 'Petugas')
+                    @else
+                        <li class="nav-item">
+                            <a href="{{ route('kasus.index') }}" class="nav-link @stack('kasus')">
 
-                            <span class="nav-link-text">Kasus</span>
-                        </a>
-                    </li>
+                                <p>Laporan Kasus</p>
+                            </a>
+                        </li>
+                    @endif
 
+                    @if (Auth::user()->role == 'Petugas')
+                    @else
+                        <li class="nav-item">
+                            <a href="{{ route('users.index') }}" class="nav-link @stack('user')">
+
+                                <p>User</p>
+                            </a>
+                        </li>
+                    @endif
 
             </div>
         </div>
