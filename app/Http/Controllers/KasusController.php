@@ -17,7 +17,7 @@ class KasusController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
+    
     public function __construct()
     {
         $this->middleware('auth');
@@ -50,6 +50,28 @@ class KasusController extends Controller
      */
     public function store(Request $request)
     {
+        $data=[];
+        $data = $request->validate([
+            
+            'reaktif'                   => ['required','numeric','min:0'],
+            'positif'                   => ['required','numeric','min:0'],
+            'sembuh'                    => ['required','numeric','min:0','max:'.$request->positif],
+            'meninggal'                 => ['required','numeric','min:0','max:'.$request->positif]
+            
+        ],[
+            'id_rw.required' => 'Rw is required',
+            'positif.required' => 'Jumlah Positif is required',
+            'positif.min' => 'Jumlah Positif tidak boleh minus',
+            'meninggal.required' => 'Jumlah Meninggal required',
+            'meninggal.min' => 'Jumlah meninggal tidak boleh minus',
+            'sembuh.required' => 'Jumlah Sembuh required',
+            'sembuh.min' => 'Jumlah Sembuh tidak boleh minus',
+            'meninggal.required' => 'Jumlah Meninggal required',
+            'meninggal.min' => 'Jumlah Meninggal tidak boleh melebihi Positif.',
+            'sembuh.required' => 'Jumlah Sembuh required',
+            'sembuh.min' => 'Jumlah Sembuh tidak boleh melebihi Positif.'
+        ]);
+
 
         $kasus = new Kasus;
         $kasus->reaktif = $request->reaktif;

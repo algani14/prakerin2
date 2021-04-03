@@ -46,3 +46,7 @@ Route::resource('users', UserController::class)->middleware('admin');
 });
 Route::resource('/',FrontendController::class);
 
+use App\Http\Controllers\ReportController;
+Route::get('laporanprov', [ReportController::class, 'getReportProvinsi']);
+Route::post('laporanprov', [ReportController::class, 'ReportProvinsi']);
+Route::get('pdfkasus', [ReportController::class,'kasus'])->name('pdfkasus');
