@@ -53,7 +53,7 @@ class KasusController extends Controller
         $data=[];
         $data = $request->validate([
             
-            'reaktif'                   => ['required','numeric','min:0'],
+            
             'positif'                   => ['required','numeric','min:0'],
             'sembuh'                    => ['required','numeric','min:0','max:'.$request->positif],
             'meninggal'                 => ['required','numeric','min:0','max:'.$request->positif]
@@ -74,7 +74,7 @@ class KasusController extends Controller
 
 
         $kasus = new Kasus;
-        $kasus->reaktif = $request->reaktif;
+        
         $kasus->positif = $request->positif;
         $kasus->sembuh = $request->sembuh;
         $kasus->meninggal = $request->meninggal;
@@ -125,7 +125,7 @@ class KasusController extends Controller
     public function update(Request $request, $id)
     {
         $kasus = Kasus::findOrFail($id);
-        $kasus->reaktif = $request->reaktif;
+       
         $kasus->positif = $request->positif;
         $kasus->sembuh = $request->sembuh;
         $kasus->meninggal = $request->meninggal;

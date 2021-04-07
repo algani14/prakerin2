@@ -83,6 +83,13 @@
                             </li>
                         @endif
 
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('report') }}">
+
+                                <span class="nav-link-text">Laporan</span>
+                            </a>
+                        </li>
+
                         @if (Auth::user()->role == 'Petugas')
                         @else
 

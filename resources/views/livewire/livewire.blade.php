@@ -11,11 +11,11 @@
             </select>
         </div>
         <div class="col-md-6">
-            <label for="reaktif">Reaktif</label>
-            <input type="text" value="@if (isset($kasus1)) {{ $kasus1->reaktif }} @endif"
-                class="form-control @error('reaktif') is-invalid @enderror" name="reaktif" id="reaktif"
-                placeholder="Masukkan Reaktif ..." value="{{ old('reaktif') }}">
-            @error('reaktif') <span class="invalid-feedback font-weight-bold">{{ $message }}</span>
+            <label for="positif">Positif</label>
+            <input type="text" value="@if (isset($kasus1)) {{ $kasus1->positif }} @endif"
+                class="form-control @error('positif') is-invalid @enderror" name="positif" id="positif"
+                placeholder="Masukkan Positif ..." value="{{ old('positif') }}">
+            @error('positif') <span class="invalid-feedback font-weight-bold">{{ $message }}</span>
             @enderror
         </div>
     </div>
@@ -33,8 +33,11 @@
 
         </div>
         <div class="col-md-6">
-            <label for="Positif">Positif</label>
-            <input type="text" class="form-control" value="@if (isset($kasus1)) {{ $kasus1->positif }} @endif" name="positif" required>
+            <label for="sembuh">Sembuh</label>
+            <input type="text" value="@if (isset($kasus1)) {{ $kasus1->sembuh }} @endif" class="form-control @error('sembuh') is-invalid @enderror" name="sembuh" id="sembuh"
+                placeholder="Masukkan Sembuh ..." value="{{ old('sembuh') }}">
+            @error('sembuh') <span class="invalid-feedback font-weight-bold">{{ $message }}</span>
+            @enderror
         </div>
     </div>
     <div class="form-group row ">
@@ -50,8 +53,12 @@
 
         </div>
         <div class="col-md-6">
-            <label for="sembuh">Sembuh</label>
-            <input type="text" class="form-control" value="@if (isset($kasus1)) {{ $kasus1->sembuh }} @endif" name="sembuh" required>
+            <label for="meninggal">Meninggal</label>
+            <input type="text" value="@if (isset($kasus1)) {{ $kasus1->meninggal }} @endif"
+                class="form-control @error('meninggal') is-invalid @enderror" name="meninggal" id="meninggal"
+                placeholder="Masukkan Meninggal ..." value="{{ old('meninggal') }}">
+            @error('meninggal') <span class="invalid-feedback font-weight-bold">{{ $message }}</span>
+            @enderror
         </div>
     </div>
     <div class="form-group row ">
@@ -66,8 +73,8 @@
             </select>
         </div>
         <div class="col-md-6">
-            <label for="meninggal">Meninggal</label>
-            <input type="text" class="form-control" value="@if (isset($kasus1)) {{ $kasus1->meninggal }} @endif" name="meninggal" required>
+            <label for="tanggal">Tanggal</label>
+            <input type="date" class="form-control" value="@if (isset($kasus1)) {{ $kasus1->tanggal }} @endif" name="tanggal" required>
         </div>
     </div>
     <div class="form-group row ">
@@ -81,9 +88,6 @@
                 @endforeach
             </select>
         </div>
-        <div class="col-md-6">
-            <label for="tanggal">Tanggal</label>
-            <input type="date" class="form-control" value="@if (isset($kasus1)) {{ $kasus1->tanggal }} @endif" name="tanggal" required>
-        </div>
+
     </div>
 </div>

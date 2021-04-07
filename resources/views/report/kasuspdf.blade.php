@@ -33,25 +33,22 @@
                             <thead>
                                 <tr>
 
-                                    <th scope="col">
+                                    <th>
                                         <center>Lokasi</center>
                                     </th>
-                                    <th scope="col">
+                                    <th>
                                         <center>RW</center>
                                     </th>
-                                    <th scope="col">
-                                        <center>Reaktif</center>
-                                    </th>
-                                    <th scope="col">
+                                    <th>
                                         <center>Positif</center>
                                     </th>
-                                    <th scope="col">
+                                    <th>
                                         <center>Meninggal</center>
                                     </th>
-                                    <th scope="col">
+                                    <th>
                                         <center>Sembuh</center>
                                     </th>
-                                    <th scope="col">
+                                    <th>
                                         <center>Tanggal</center>
                                     </th>
                                 </tr>
@@ -74,9 +71,7 @@
                                         <td>
                                             <center>{{ $data->rw->nama_rw }}</center>
                                         </td>
-                                        <td>
-                                            <center>{{ $data->reaktif }}</center>
-                                        </td>
+
                                         <td>
                                             <center>{{ $data->positif }}</center>
                                         </td>

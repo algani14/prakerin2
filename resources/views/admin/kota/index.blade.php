@@ -11,6 +11,17 @@
                             Data Kota
                             <a href=" {{ route('kota.create') }} " class="btn btn-primary" style="float: right;">Tambah
                                 Data</a>
+                            <form class="navbar-search mt-3 cari-none" action="{{ URL::current() }}" method="GET">
+                                <div class="form-group mb-0">
+                                    <div class="input-group input-group-alternative">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fas fa-search"></i></span>
+                                        </div>
+                                        <input class="form-control" placeholder="Cari ...." type="text" name="cari"
+                                            value="{{ request('cari') }}">
+                                    </div>
+                                </div>
+                            </form>
                         </h10>
                     </div>
                     <div class="card-body">
